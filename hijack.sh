@@ -1,6 +1,6 @@
 #!/bin/bash
 
-read -p "credentials.db <Path> " CREDENTIALS_DB_PATH
+read -p "credentials.db path:" CREDENTIALS_DB_PATH
 
 if ! command -v gcloud &> /dev/null; then
     echo "Did not found gcloud, please install gcloud。"
@@ -37,7 +37,7 @@ echo $ADC_CONTENT > $GCLOUD_LEGACY_DIR/ADC.json
 
 mkdir -p "$GCLOUD_CONFIG_DIR/configurations"
 
-read -p "GCloud default project Setting <Project Name>" PROJECT
+read -p "default project:" PROJECT
 
 gcloud config set account "$ACCOUNT"
 gcloud config set project "$PROJECT"
